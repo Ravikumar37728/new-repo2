@@ -24,7 +24,7 @@ const routes = [
       },
       {
         path: "home/User/Success",name: "Success",
-        component: () => import("pages/Success.vue"),
+        component: () => import("pages/success.vue"),
       },
     ],
   },
