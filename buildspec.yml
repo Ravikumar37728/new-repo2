@@ -5,7 +5,6 @@ phases:
     commands:
       - sudo su
       - yum update -y
-      - sudo su umount  ~/efs-mount-point
       - yum install httpd -y
       - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
       - sudo yum -y install curl
@@ -19,8 +18,7 @@ phases:
       - pip install --upgrade awscli
       - cd /var/www/html
       - rm -rf index.html
-      - sudo yum -y install httpd
-      - sudo service httpd start  
+      - sudo yum -y install httpd 
       - sudo yum install git -y
       - git init
   pre_build:
