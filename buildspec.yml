@@ -6,8 +6,6 @@ phases:
       - sudo su
       - yum update -y
       - yum install httpd -y
-      - systemctl start httpd
-      - systemctl enable httpd
       - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
       - . ~/.nvm/nvm.sh
       - nvm install 16
@@ -15,6 +13,9 @@ phases:
       - pip install --upgrade pip
       - pip install --upgrade awscli
       - cd /var/www/html
+      - rm -rf index.html
+      - systemctl start httpd
+      - systemctl enable httpd
       - sudo yum install git -y
       - git init
   pre_build:
