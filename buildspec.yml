@@ -7,8 +7,6 @@ phases:
       - yum update -y
       - yum install httpd -y
       - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-      - cd ~/nvm
-      - nvm.sh
       - nvm install 16
       - npm i npm@latest -g
       - pip install --upgrade pip
