@@ -3,15 +3,28 @@ version: 0.2
 phases:
   install:
     commands:
+      - sudo su
+      - yum update -y
+      - yum install httpd -y
+      - systemctl start httpd
+      - systemctl enable httpd
+      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+      - . ~/.nvm/nvm.sh
+      - nvm install 16
       - npm i npm@latest -g
       - pip install --upgrade pip
       - pip install --upgrade awscli
+      - cd /var/www/html
+      - sudo yum install git -y
+      - git init
   pre_build:
     commands:
       - npm install --legacy-peer-deps
+      - npm i @vue/cli-service --legacy-peer-deps
+      
   build:
     commands:
-      - npx quasar dev
+      - screen -d -m npx quasar dev
   post_build:
     commands:
       - aws s3 sync ./dist $S3_BUCKET
