@@ -23,11 +23,11 @@ phases:
       - git init
   pre_build:
     commands:
-      - npm install --legacy-peer-deps
       - npm i @vue/cli-service --legacy-peer-deps
       
   build:
     commands:
+      - npm install --legacy-peer-deps
       - screen -d -m npx quasar dev
   post_build:
     commands:
