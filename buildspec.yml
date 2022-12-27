@@ -18,8 +18,8 @@ phases:
       - pip install --upgrade awscli
       - cd /var/www/html
       - rm -rf index.html
-      - systemctl start httpd
-      - systemctl enable httpd
+      - sudo yum -y install httpd
+      - sudo service httpd start  
       - sudo yum install git -y
       - git init
   pre_build:
