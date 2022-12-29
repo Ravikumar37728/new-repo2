@@ -6,14 +6,11 @@
   "author": "Infy Team",
   "private": true,
   "scripts": {
-    "build": "vue-cli-service build",
-    "serve": "vue-cli-service serve",
     "lint": "eslint --ext .js,.vue ./",
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
-    "@vue/cli-service": "^5.0.8",
     "axios": "^0.21.1",
     "bootstrap": "^5.2.2",
     "core-js": "^3.6.5",
